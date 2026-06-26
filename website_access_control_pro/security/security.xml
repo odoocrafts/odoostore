@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <data noupdate="1">
+    <data noupdate="0">
         <!-- Category for Website Access Control Pro -->
         <record id="module_category_website_access_control_pro" model="ir.module.category">
             <field name="name">Website Access Control Pro</field>
