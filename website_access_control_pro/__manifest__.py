@@ -18,8 +18,8 @@ MVP Features:
 6. Theme Lock
 7. Media Library Permissions
     """,
-    'author': 'Odoocrafts',
-    'website': 'https://github.com/odoocrafts',
+    'author': 'Odoocrafts Innovations',
+    'website': 'https://odoocrafts.com',
     'depends': ['website', 'website_blog'],
     'data': [
         'security/security.xml',
@@ -31,8 +31,9 @@ MVP Features:
             'website_access_control_pro/static/src/scss/editor_restrictions.scss',
         ],
     },
-    'price': 99.00,
-    'currency': 'USD',
+    'price': 99.0,
+    'currency': 'EUR',
+    'images': ['static/description/banner.png', 'static/description/screenshot1.png'],
     'installable': True,
     'application': False,
     'license': 'OPL-1',
