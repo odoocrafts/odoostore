@@ -1,17 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">
-        <!-- Category for Website Access Control Pro -->
-        <record id="module_category_website_access_control_pro" model="ir.module.category">
-            <field name="name">Website Access Control Pro</field>
-            <field name="description">Granular permissions for website editing.</field>
-            <field name="sequence">100</field>
-        </record>
-
         <!-- Base Restricted Editor (can access website builder but restricted by other groups) -->
         <record id="group_restricted_editor" model="res.groups">
             <field name="name">Restricted Editor (Base)</field>
-            <field name="category_id" ref="website_access_control_pro.module_category_website_access_control_pro"/>
             <!-- Inherit website restricted editor so they can access the frontend editor -->
             <field name="implied_ids" eval="[(4, ref('website.group_website_restricted_editor'))]"/>
             <field name="comment">Can access website builder but has granular restrictions on what can be edited.</field>
@@ -20,7 +12,6 @@
         <!-- Menu Admin -->
         <record id="group_menu_admin" model="res.groups">
             <field name="name">Menu Admin</field>
-            <field name="category_id" ref="website_access_control_pro.module_category_website_access_control_pro"/>
             <field name="implied_ids" eval="[(4, ref('website_access_control_pro.group_restricted_editor'))]"/>
             <field name="comment">Can modify Header, Footer, Main Menu, and Mega Menu.</field>
         </record>
@@ -28,7 +19,6 @@
         <!-- Theme Admin -->
         <record id="group_theme_admin" model="res.groups">
             <field name="name">Theme Admin</field>
-            <field name="category_id" ref="website_access_control_pro.module_category_website_access_control_pro"/>
             <field name="implied_ids" eval="[(4, ref('website_access_control_pro.group_restricted_editor'))]"/>
             <field name="comment">Can change colors, fonts, layout, and header style.</field>
         </record>
@@ -36,7 +26,6 @@
         <!-- SEO Admin -->
         <record id="group_seo_admin" model="res.groups">
             <field name="name">SEO Admin</field>
-            <field name="category_id" ref="website_access_control_pro.module_category_website_access_control_pro"/>
             <field name="implied_ids" eval="[(4, ref('website_access_control_pro.group_restricted_editor'))]"/>
             <field name="comment">Can edit Robots, Canonical URLs, and Redirects.</field>
         </record>
@@ -44,7 +33,6 @@
         <!-- Snippet Admin -->
         <record id="group_snippet_admin" model="res.groups">
             <field name="name">Snippet Admin</field>
-            <field name="category_id" ref="website_access_control_pro.module_category_website_access_control_pro"/>
             <field name="implied_ids" eval="[(4, ref('website_access_control_pro.group_restricted_editor'))]"/>
             <field name="comment">Can insert all snippets, including Forms, Custom HTML, Embedded Scripts.</field>
         </record>
@@ -52,7 +40,6 @@
         <!-- Media Delete Admin -->
         <record id="group_media_delete_admin" model="res.groups">
             <field name="name">Media Delete Admin</field>
-            <field name="category_id" ref="website_access_control_pro.module_category_website_access_control_pro"/>
             <field name="implied_ids" eval="[(4, ref('website_access_control_pro.group_restricted_editor'))]"/>
             <field name="comment">Can delete images from the media library.</field>
         </record>
@@ -60,7 +47,6 @@
         <!-- Blog Writer -->
         <record id="group_blog_writer" model="res.groups">
             <field name="name">Blog Writer</field>
-            <field name="category_id" ref="website_access_control_pro.module_category_website_access_control_pro"/>
             <field name="implied_ids" eval="[(4, ref('website_access_control_pro.group_restricted_editor'))]"/>
             <field name="comment">Can write/edit posts but cannot publish or delete them.</field>
         </record>
@@ -68,7 +54,6 @@
         <!-- Blog Publisher -->
         <record id="group_blog_publisher" model="res.groups">
             <field name="name">Blog Publisher</field>
-            <field name="category_id" ref="website_access_control_pro.module_category_website_access_control_pro"/>
             <field name="implied_ids" eval="[(4, ref('website_access_control_pro.group_blog_writer'))]"/>
             <field name="comment">Can publish blog posts.</field>
         </record>
@@ -76,7 +61,6 @@
         <!-- Blog Admin -->
         <record id="group_blog_admin" model="res.groups">
             <field name="name">Blog Admin</field>
-            <field name="category_id" ref="website_access_control_pro.module_category_website_access_control_pro"/>
             <field name="implied_ids" eval="[(4, ref('website_access_control_pro.group_blog_publisher'))]"/>
             <field name="comment">Can delete blog posts.</field>
         </record>
