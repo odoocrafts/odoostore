@@ -12,8 +12,8 @@
         <record id="group_restricted_editor" model="res.groups">
             <field name="name">Restricted Editor (Base)</field>
             <field name="category_id" ref="website_access_control_pro.module_category_website_access_control_pro"/>
-            <!-- Inherit website publisher so they can access the frontend editor -->
-            <field name="implied_ids" eval="[(4, ref('website.group_website_publisher'))]"/>
+            <!-- Inherit website restricted editor so they can access the frontend editor -->
+            <field name="implied_ids" eval="[(4, ref('website.group_website_restricted_editor'))]"/>
             <field name="comment">Can access website builder but has granular restrictions on what can be edited.</field>
         </record>
 
