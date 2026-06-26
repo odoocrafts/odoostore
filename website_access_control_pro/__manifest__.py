@@ -20,7 +20,7 @@ MVP Features:
     """,
     'author': 'Odoocrafts',
     'website': 'https://github.com/odoocrafts',
-    'depends': ['website', 'website_blog', 'web_editor'],
+    'depends': ['website', 'website_blog'],
     'data': [
         'security/security.xml',
         'security/ir.model.access.csv',
