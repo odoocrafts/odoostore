@@ -1,0 +1,67 @@
+/* Website Access Control Pro - Editor Restrictions */
+
+/* =========================================
+   1. Theme Admin Restrictions
+   ========================================= */
+body.wacp_no_theme_admin {
+    /* Hide the Theme tab and panel in the right sidebar */
+    .o_we_website_theme_panel,
+    .nav-item[data-name="theme"],
+    .nav-link[data-bs-target="#o_we_theme_panel"],
+    #o_we_theme_panel,
+    .o_we_theme_customize_btn {
+        display: none !important;
+    }
+}
+
+/* =========================================
+   2. Menu Admin Restrictions
+   ========================================= */
+body.wacp_no_menu_admin {
+    /* Hide Edit Menu buttons and overlays for Header/Footer */
+    .o_edit_menu_popover,
+    .js_edit_menu,
+    a[data-action="edit_menu"],
+    .o_we_customize_header_btn,
+    .o_we_customize_footer_btn {
+        display: none !important;
+    }
+}
+
+/* =========================================
+   3. Snippet Admin Restrictions
+   ========================================= */
+body.wacp_no_snippet_admin {
+    /* Hide advanced snippets from the drag-and-drop menu */
+    #oe_snippets {
+        /* Form Snippets */
+        .oe_snippet[data-snippet="s_website_form"],
+        .oe_snippet[data-snippet="s_donation"],
+        /* Custom HTML and Embeds */
+        .oe_snippet[data-snippet="s_custom_html"],
+        .oe_snippet[data-snippet="s_embed_code"],
+        .oe_snippet[data-snippet="s_map"] {
+            display: none !important;
+        }
+    }
+}
+
+/* =========================================
+   4. SEO Admin Restrictions
+   ========================================= */
+body.wacp_no_seo_admin {
+    /* Hide specific fields in the SEO dialog */
+    .o_seo_dialog {
+        /* Usually these are identified by their names or surrounding labels in the dialog. 
+           We hide the common ones used for robots and canonicals. */
+        input[name="seo_robots"],
+        input[name="seo_canonical"],
+        input[name="seo_redirect"],
+        /* If they are in standard form groups */
+        .form-group:has(input[name="seo_robots"]),
+        .form-group:has(input[name="seo_canonical"]),
+        .form-group:has(input[name="seo_redirect"]) {
+            display: none !important;
+        }
+    }
+}

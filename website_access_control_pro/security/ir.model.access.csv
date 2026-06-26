@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_blog_post_writer,blog.post writer,website_blog.model_blog_post,website_access_control_pro.group_blog_writer,1,1,1,0
+access_blog_post_publisher,blog.post publisher,website_blog.model_blog_post,website_access_control_pro.group_blog_publisher,1,1,1,0
+access_blog_post_admin,blog.post admin,website_blog.model_blog_post,website_access_control_pro.group_blog_admin,1,1,1,1

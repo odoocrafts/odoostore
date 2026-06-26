@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Add classes to the body or website editor to handle CSS-based hiding -->
+    <template id="layout_access_control" inherit_id="website.layout">
+        <xpath expr="//body" position="attributes">
+            <attribute name="t-attf-class" separator=" " add="{{ 'wacp_restricted_editor' if request.env.user.has_group('website_access_control_pro.group_restricted_editor') else '' }}"/>
+            <attribute name="t-attf-class" separator=" " add="{{ 'wacp_no_menu_admin' if request.env.user.has_group('website_access_control_pro.group_restricted_editor') and not request.env.user.has_group('website_access_control_pro.group_menu_admin') else '' }}"/>
+            <attribute name="t-attf-class" separator=" " add="{{ 'wacp_no_theme_admin' if request.env.user.has_group('website_access_control_pro.group_restricted_editor') and not request.env.user.has_group('website_access_control_pro.group_theme_admin') else '' }}"/>
+            <attribute name="t-attf-class" separator=" " add="{{ 'wacp_no_seo_admin' if request.env.user.has_group('website_access_control_pro.group_restricted_editor') and not request.env.user.has_group('website_access_control_pro.group_seo_admin') else '' }}"/>
+            <attribute name="t-attf-class" separator=" " add="{{ 'wacp_no_snippet_admin' if request.env.user.has_group('website_access_control_pro.group_restricted_editor') and not request.env.user.has_group('website_access_control_pro.group_snippet_admin') else '' }}"/>
+        </xpath>
+    </template>
+
+</odoo>
