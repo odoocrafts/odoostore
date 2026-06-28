@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="inventory_copilot.Dashboard" owl="1">
+        <div class="o_inventory_copilot_dashboard p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Inventory Health Dashboard</h2>
+                <button class="btn btn-primary" t-on-click="openRecommendations">View AI Recommendations</button>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card o_metric_card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-muted">Health Score</h5>
+                            <h1 class="display-4 fw-bold text-success" t-esc="state.healthData.score + '%'"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card o_metric_card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-muted">Stockout Risks</h5>
+                            <h1 class="display-4 fw-bold text-danger" t-esc="state.healthData.stockout_risk_count"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card o_metric_card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-muted">Overstock Risks</h5>
+                            <h1 class="display-4 fw-bold text-warning" t-esc="state.healthData.overstock_risk_count"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card o_metric_card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-muted">Dead Stock Value</h5>
+                            <h1 class="display-4 fw-bold" t-esc="'$' + state.healthData.dead_stock_value"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card o_metric_card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-muted">Inventory Turnover</h5>
+                            <h1 class="display-4 fw-bold" t-esc="state.healthData.inventory_turnover"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card o_metric_card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title text-muted">Supplier Reliability Score</h5>
+                            <h1 class="display-4 fw-bold text-info" t-esc="state.healthData.supplier_score"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</templates>
