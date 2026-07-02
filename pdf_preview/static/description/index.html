@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>PDF Preview for Odoo - Odoocrafts Innovations</title>
+    <!-- Use basic Bootstrap 5 styling to ensure compatibility with Odoo's store preview -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .odoocrafts-container {
+            font-family: 'Inter', sans-serif;
+            color: #333;
+        }
+        .header-section {
+            background: linear-gradient(135deg, #1f2937, #4b5563);
+            color: white;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .header-section h1 {
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+        .feature-box {
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            background: #fff;
+            margin-bottom: 1.5rem;
+            border: 1px solid #eee;
+        }
+        .feature-box h3 {
+            color: #2563eb;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        .faq-section {
+            background: #f9fafb;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+        .faq-item h4 {
+            font-size: 1.1rem;
+            color: #111827;
+            font-weight: 600;
+        }
+        .faq-item p {
+            color: #4b5563;
+        }
+    </style>
+</head>
+<body>
+    <div class="container odoocrafts-container mt-4 mb-5">
+        <!-- Header Section -->
+        <div class="header-section">
+            <h1>PDF Preview for Odoo</h1>
+            <p class="lead mt-3">Stop cluttering your Downloads folder! Preview generated PDFs directly in your browser.</p>
+        </div>
+
+        <!-- Problem & Solution -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="feature-box h-100">
+                    <h3>❌ The Problem</h3>
+                    <p>By default, every time you print a quotation, invoice, or any report in Odoo, it automatically downloads a copy to your local device. This clutters up the Downloads folder with unnecessary duplicate files, causing storage issues and a frustrating user experience.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="feature-box h-100">
+                    <h3>✅ The Solution</h3>
+                    <p>This module intercepts Odoo's native printing behavior. Instead of forcing a download, it instantly opens your PDF report in a new browser tab. You can seamlessly preview the document, and download or print it only if you actually need to using the browser's built-in PDF tools.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Features -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <h2 class="text-center mb-4">Why you need this module</h2>
+                <div class="row">
+                    <div class="col-md-4 text-center">
+                        <div class="feature-box">
+                            <h4>🚀 Instant Preview</h4>
+                            <p>No more digging through your file explorer. View reports instantly in a new tab.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="feature-box">
+                            <h4>💾 Save Storage</h4>
+                            <p>Keep your desktop and downloads folder clean from hundreds of temporary invoices and quotes.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="feature-box">
+                            <h4>⚡ Zero Configuration</h4>
+                            <p>Just install the app and it instantly works globally across all Odoo QWeb PDF reports.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ for SEO -->
+        <div class="faq-section">
+            <h2 class="text-center mb-4">Frequently Asked Questions (FAQ)</h2>
+            
+            <div class="faq-item">
+                <h4>How do I stop Odoo from downloading PDFs automatically?</h4>
+                <p>By installing the "PDF Preview" module by Odoocrafts, Odoo's default behavior is modified to open PDFs in a new browser tab instead of triggering a forced download.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Does this work for custom Odoo reports?</h4>
+                <p>Yes! Because this module hooks into Odoo's core `ir.actions.report` framework, it automatically applies to all PDF reports, including those generated by third-party or custom modules.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Is it compatible with Odoo 19?</h4>
+                <p>Absolutely. The module is built using the latest Owl JavaScript framework standards ensuring seamless compatibility with Odoo 19.0 Community and Enterprise editions.</p>
+            </div>
+
+            <div class="faq-item">
+                <h4>Can I still download the PDF if I need to?</h4>
+                <p>Yes. When the PDF opens in a new tab, you can use your browser's native PDF viewer buttons (usually in the top right corner) to save or print the file at any time.</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center mt-5 text-muted">
+            <p>Developed with ❤️ by <a href="https://odoocrafts.com" target="_blank" style="text-decoration:none; font-weight:bold; color:#2563eb;">Odoocrafts Innovations</a></p>
+        </div>
+    </div>
+</body>
+</html>
