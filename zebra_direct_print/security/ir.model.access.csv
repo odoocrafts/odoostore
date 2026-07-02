@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_zebra_label_template_user,zebra.label.template.user,model_zebra_label_template,stock.group_stock_user,1,0,0,0
+access_zebra_label_template_manager,zebra.label.template.manager,model_zebra_label_template,stock.group_stock_manager,1,1,1,1

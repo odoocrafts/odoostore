@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_picking_type_form_inherit_zebra" model="ir.ui.view">
+        <field name="name">stock.picking.type.form.inherit.zebra</field>
+        <field name="model">stock.picking.type</field>
+        <field name="inherit_id" ref="stock.view_picking_type_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='hardware']" position="inside">
+                <group string="ZebraDirect / Raw Printer Settings">
+                    <field name="zebra_label_template_id" />
+                    <field name="printer_websocket_url" invisible="not zebra_label_template_id"/>
+                </group>
+            </xpath>
+            <!-- Fallback if hardware page doesn't exist in the base version or we want it elsewhere: -->
+            <xpath expr="//sheet/notebook" position="inside">
+                <page string="ZebraDirect Print" name="zebradirect_print">
+                    <group>
+                        <field name="zebra_label_template_id" />
+                        <field name="printer_websocket_url" invisible="not zebra_label_template_id"/>
+                    </group>
+                    <div class="text-muted" invisible="not zebra_label_template_id">
+                        Set the WebSocket URL for the local print spooler (e.g., QZ Tray). 
+                        Default: ws://127.0.0.1:8181
+                    </div>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

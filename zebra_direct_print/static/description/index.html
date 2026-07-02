@@ -1,0 +1,108 @@
+<section class="oe_container oe_dark" style="background-color: #f8f9fa; padding: 2rem 0;">
+    <div class="row align-items-center">
+        <div class="col-lg-6 px-4">
+            <h1 class="display-4 text-primary font-weight-bold" style="color: #714B67;">ZebraDirect: Raw Printer Engine</h1>
+            <h3 class="font-weight-light text-muted mb-4">Pixel-Perfect Barcodes without PDF Margin Shifts</h3>
+            <p class="lead">
+                Odoo's default PDF rendering is great for documents, but frequently fails for 
+                small industrial thermal printers (Zebra, TSC). ZebraDirect completely bypasses PDF generation, 
+                compiling your label designs directly into raw printer control languages (ZPL / TSPL) 
+                and dispatching them instantly via local WebSockets.
+            </p>
+            <ul class="list-unstyled mt-4" style="font-size: 1.1rem;">
+                <li class="mb-2"><i class="fa fa-check-circle text-success mr-2"></i> <strong>Zero Margin Shifts:</strong> Vector PDF scaling artifacts are eliminated.</li>
+                <li class="mb-2"><i class="fa fa-check-circle text-success mr-2"></i> <strong>Instantaneous Speed:</strong> Raw string arrays print orders of magnitude faster.</li>
+                <li class="mb-2"><i class="fa fa-check-circle text-success mr-2"></i> <strong>Visual Designer:</strong> Jinja2 templating with dynamic data injection.</li>
+            </ul>
+        </div>
+        <div class="col-lg-6 text-center">
+            <!-- Optional placeholder for a screenshot -->
+            <img src="banner.png" class="img-fluid rounded shadow-lg" alt="ZebraDirect Banner" style="max-height: 400px;"/>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container" style="padding: 2rem 0;">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center font-weight-bold" style="color: #714B67; margin-bottom: 2rem;">How it Works</h2>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="p-4 shadow-sm rounded h-100 bg-white">
+                <i class="fa fa-code fa-3x mb-3 text-primary"></i>
+                <h4>1. Design the Template</h4>
+                <p class="text-muted">Write raw ZPL or TSPL using dynamic Jinja2 placeholders (e.g. <code>{{ record.name }}</code>) inside Odoo.</p>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="p-4 shadow-sm rounded h-100 bg-white">
+                <i class="fa fa-cogs fa-3x mb-3 text-primary"></i>
+                <h4>2. Configure Location</h4>
+                <p class="text-muted">Assign the template to your specific Picking Type (e.g., Delivery Orders) and set your local WebSocket URL.</p>
+            </div>
+        </div>
+        <div class="col-md-4 text-center">
+            <div class="p-4 shadow-sm rounded h-100 bg-white">
+                <i class="fa fa-print fa-3x mb-3 text-primary"></i>
+                <h4>3. Direct Socket Print</h4>
+                <p class="text-muted">Click "Print ZPL Labels" to instantly send raw code via the client's local WebSocket directly to the thermal printer.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container oe_dark" style="background-color: #f1f3f5; padding: 2rem 0;">
+    <div class="row">
+        <div class="col-12 px-4">
+            <h2 class="font-weight-bold" style="color: #714B67;">Frequently Asked Questions (FAQ)</h2>
+            <div class="accordion mt-4" id="faqAccordion">
+                
+                <div class="card border-0 mb-3 shadow-sm">
+                    <div class="card-header bg-white" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link text-dark font-weight-bold" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Why is my Zebra printer printing blurry barcodes from Odoo?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                        <div class="card-body text-muted">
+                            By default, Odoo renders barcodes into a PDF. When the browser scales this PDF down to tiny labels (e.g., 32x15mm), anti-aliasing causes blurriness, making it unscannable for industrial scanners. ZebraDirect solves this by sending <strong>raw ZPL</strong>, so the printer natively draws crisp barcodes.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 mb-3 shadow-sm">
+                    <div class="card-header bg-white" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link text-dark font-weight-bold collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                How do I fix margin shifting when printing thermal labels?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                        <div class="card-body text-muted">
+                            Browsers inject their own margins and headers/footers during PDF printing, often offsetting the label by a few millimeters. By using ZebraDirect to send raw ZPL or TSPL via WebSocket, you completely bypass the browser's print dialog and ensure pixel-perfect placement every time.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 mb-3 shadow-sm">
+                    <div class="card-header bg-white" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link text-dark font-weight-bold collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Do I need QZ Tray or IoT box for this to work?
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                        <div class="card-body text-muted">
+                            ZebraDirect outputs raw commands to any WebSocket URL you define (e.g., <code>ws://127.0.0.1:8181</code>). You can use popular local print spoolers like QZ Tray to catch these WebSockets and forward them to your local USB or Network printer. You do not need the expensive Odoo IoT Box.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
