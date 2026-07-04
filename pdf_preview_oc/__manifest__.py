@@ -20,6 +20,8 @@ From there, users can choose to download or print using the browser's native PDF
     'data': [],
     'assets': {
         'web.assets_backend': [
+            'pdf_preview_oc/static/src/xml/report_preview_dialog.xml',
+            'pdf_preview_oc/static/src/js/report_preview_dialog.js',
             'pdf_preview_oc/static/src/js/report_preview.js',
         ],
     },

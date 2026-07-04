@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="pdf_preview_oc.PDFPreviewDialog">
+        <Dialog size="'xl'" title="props.title">
+            <div class="pdf-preview-container" style="height: 80vh; margin: -1rem;">
+                <iframe t-att-src="props.url" style="width: 100%; height: 100%; border: none;" t-ref="iframeRef"/>
+            </div>
+            <t t-set-slot="footer">
+                <button class="btn btn-primary" t-on-click="onPrint">
+                    <i class="fa fa-print me-1"/> Print
+                </button>
+                <button class="btn btn-secondary" t-on-click="onDownload">
+                    <i class="fa fa-download me-1"/> Download
+                </button>
+                <button class="btn btn-secondary" t-on-click="props.close">Close</button>
+            </t>
+        </Dialog>
+    </t>
+</templates>
