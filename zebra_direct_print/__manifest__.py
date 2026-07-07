@@ -19,8 +19,8 @@ Features:
     'author': 'Odoocrafts Innovations',
     'website': 'https://odoocrafts.com',
     'license': 'OPL-1',
-    'price': 76.0,
-    'currency': 'EUR',
+    'price': 25.0,
+    'currency': 'USD',
     'depends': ['stock', 'web'],
     'data': [
         'security/ir.model.access.csv',
